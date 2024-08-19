@@ -1,3 +1,5 @@
+import {Task} from "./Task";
+
 export function Todo(name = "", description = "", tasks = []) {
     let tname = name;
     let tdescription = description;
@@ -9,6 +11,12 @@ export function Todo(name = "", description = "", tasks = []) {
     const setDescription = (newDiscreption) => {tdescription = newDiscreption};
     const getTasks = () => ttasks;
     const setTasks = (newTasks) => ttasks = newTasks;
+    const addNewTask = (newTask) => {
+        ttasks.push(newTask);
+        console.log("new task added");
+        console.log("current tasks are ");
+        ttasks.forEach(task => console.log(task));
+    }
 
     const getTaskByName = (taskName) => {
         let [task] = ttasks.filter(task => task.getName() === taskName);
@@ -26,5 +34,5 @@ export function Todo(name = "", description = "", tasks = []) {
     }
 
     return {getName, setName, getDescription, setDescription,
-            getTasks, setTasks, getTaskByName, getTaskByPriorityNumber, getTaskByState};
+            getTasks, setTasks, getTaskByName, getTaskByPriorityNumber, getTaskByState, addNewTask};
 }
