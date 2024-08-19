@@ -1,10 +1,11 @@
-import {format} from "date-fns";
-import { Priority } from "./priority";
+import { format } from "date-fns";
+import { Priority } from "./Priority";
 
-function Task(name = "", description = "", priority = Priority(1), date = format(new Date(), "d MMM h:m:s a")) {
+function Task(name = "test", description = "", priorityNumber = 1,
+              date = format(new Date(), "d MMM h:m:s a")) {
     let tname = name;
     let tdescription = description;
-    let tpriority = priority;
+    let tpriority = Priority(priorityNumber);
     let tdate = date;
     let tstate = "created";
 
@@ -13,8 +14,15 @@ function Task(name = "", description = "", priority = Priority(1), date = format
     const getName = () => tname;
     const getDescription = () => tdescription;
     const getState = () => tstate;
+
+    const setDate = (newDate) => {tdate = newDate};
+    const setPriority = (newPriority) => {tpriority = newPriority};
+    const setName = (newName) => {tname = newName};
+    const setDescription = (newDescription) => {tdescription = newDescription};
+    const setState = (newState) => {tstate = newState};
     
-    return {getDate, getDescription, getPriority, getName, getState};
+    return {getDate, setDate, getDescription, setDescription, getPriority,
+            setPriority, getName, setName, getState, setState};
 }
 
 export {Task};
