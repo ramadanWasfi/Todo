@@ -1,8 +1,10 @@
-.todoContainer {
+.todoContainer, .projectContainer {
     display: flex;
     flex-direction: column;
-    border: 3px solid blue;
     border-radius: 8px;
+    border: 5px solid gainsboro;
+    margin: 8px;
+    padding: 8px;
 }
 
 .todoNameContainer {
@@ -15,20 +17,19 @@
     margin-right: auto;
 }
 
-.todoDescriptionContainer {
+.todoDescriptionContainer , .projectDescriptionContainer {
     margin-bottom: 16px;
 }
 
 
-.todoDescriptionContainer p{
+.todoDescriptionContainer p, .projectDescriptionContainer p{
     margin-left: 32px;
 }
 
-.todoTasksContainer {
+.todoTasksContainer , .projectTodosContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 3px solid sandybrown;
 }
 
 
@@ -37,7 +38,8 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     padding: 16px;
-    border: 3px solid beige;
+    margin-bottom: 8px;
+    border: 3px solid aquamarine;
 }
 
 .taskMainContainer {
@@ -46,7 +48,6 @@
     align-items: center;
     padding: 8px;
     border-radius: 8px;
-    border: 3px solid red;
 }
 
 .taskMainContainerLeftPart {
