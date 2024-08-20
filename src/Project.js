@@ -5,15 +5,17 @@ export function Project(name = "test project", description = "nice project", tod
     let pdescription = pdescription;
     let ptodos = todos;
 
-    const getProjectName = () => pname;
-    const getProjectDescription = () => pdescription;
-    const getProjectTodos = () => ptodos;
-    const getProjectTodoByName = (tname) => {
+    const getName = () => pname;
+    const getDescription = () => pdescription;
+    const getTodos = () => ptodos;
+    const getTodoByName = (tname) => {
         let [todo] = ptodos.filter(todo => todo.getName() === tname);
         return todo;
     };
 
-    const setProjectName = (newName) => {pname = newName};
-    const setProjectDescription = (newDescription) => {pdescription = newDescription};
-    const setProjectTodos = (newTodos) => {ptodos = newTodos};
+    const setName = (newName) => {pname = newName};
+    const setDescription = (newDescription) => {pdescription = newDescription};
+    const setTodos = (newTodos) => {ptodos = newTodos};
 }
+
+
