@@ -1,0 +1,33 @@
+.taskContainer {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    padding: 16px;
+    border: 3px solid beige;
+    width:65%;
+}
+
+.taskMainContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    border: 3px solid red;
+}
+
+.taskMainContainerLeftPart {
+    margin-right: auto;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskMainConainerRightPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-right: 16px;
+}
