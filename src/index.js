@@ -1,20 +1,17 @@
 import {Task, createTaskElement} from "./Task";
-import { Todo } from "./Todo";
+import { Todo, createTodoElement } from "./Todo";
 import "./style.css";
 
 const task = Task("task A", 'aa',2);
 const task2 = Task("task b", 'd', 1);
+const task3 = Task("task basda", 'asdasdasad', 4);
+
 task.setState("finished");
 const taskElement = createTaskElement(task);
 let container = document.querySelector(".container");
 container.appendChild(taskElement);
 
-const todo = Todo("a","b",[task, task2]);
+const todo = Todo("health todo","some tasks to prevent you from diseases",[task, task2, task3]);
 
-let a = todo.getTaskByPriorityNumber(2);
-let b = todo.getTaskByPriorityNumber(1);
-let c = todo.getTaskByState("finished");
-
-console.log(a.getName());
-console.log(b.getName());
-console.log(c.getName());
+const todoElement = createTodoElement(todo);
+container.appendChild(todoElement);
