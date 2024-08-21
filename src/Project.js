@@ -1,23 +1,21 @@
 import { Todo , createTodoElement} from "./Todo";
-
+import { Common
+    
+ } from "./Common";
 function Project(name = "test project", description = "nice project", todos = []) {
-    let pname = name;
-    let pdescription = description;
+   
+    let common = Common(name, description);
     let ptodos = todos;
 
-    const getName = () => pname;
-    const getDescription = () => pdescription;
+  
     const getTodos = () => ptodos;
     const getTodoByName = (tname) => {
         let [todo] = ptodos.filter(todo => todo.getName() === tname);
         return todo;
     };
-
-    const setName = (newName) => {pname = newName};
-    const setDescription = (newDescription) => {pdescription = newDescription};
     const setTodos = (newTodos) => {ptodos = newTodos};
 
-    return {getName, getDescription, getTodos, getTodoByName, setName, setDescription, setTodos};
+    return Object.assign({},common,{getTodos, getTodoByName, setTodos});
 }
 
 

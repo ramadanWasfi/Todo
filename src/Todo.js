@@ -1,14 +1,11 @@
 import {Task, createTaskElement} from "./Task";
+import {Common} from "./Common";
 
 function Todo(name = "", description = "", tasks = []) {
-    let tname = name;
-    let tdescription = description;
+
+    let common = Common(name, description);
     let ttasks = tasks;
 
-    const getName = () => tname;
-    const setName = (newName) => {tanme = newName};
-    const getDescription = () => tdescription;
-    const setDescription = (newDiscreption) => {tdescription = newDiscreption};
     const getTasks = () => ttasks;
     const setTasks = (newTasks) => ttasks = newTasks;
     const addNewTask = (newTask) => {
@@ -33,8 +30,7 @@ function Todo(name = "", description = "", tasks = []) {
         return task;
     }
 
-    return {getName, setName, getDescription, setDescription,
-            getTasks, setTasks, getTaskByName, getTaskByPriorityNumber, getTaskByState, addNewTask};
+    return Object.assign({},common,{getTasks, setTasks, getTaskByName, getTaskByPriorityNumber, getTaskByState, addNewTask});
 }
 
 
