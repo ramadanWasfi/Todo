@@ -1,6 +1,7 @@
 import {Task, createTaskElement} from "./Task";
 import { Todo, createTodoElement } from "./Todo";
 import { Project, createProjectElement} from "./Project";
+import {createMainPage} from "./main";
 
 import "./style.css";
 
@@ -13,10 +14,13 @@ const todo2 = Todo("wealth todo","tasks to increase your money freedom",[task, t
 const todo3 = Todo("mental health todo","train your brain to be calm in every situation",[task, task2, task3]);
 
 const project = Project("Human Genome Project", "Hack Human DNA To alter human behavior",[todo, todo2, todo3])
+const project2 = Project("Good Project", "Hack Human DNA To alter human behavior",[todo, todo2, todo3])
+const project3 = Project("Hanna Project", "Hack Human DNA To alter human behavior",[todo, todo2, todo3])
 
-const todoElement = createTodoElement(todo);
-const projectElement = createProjectElement(project);
+const projects = [project, project2, project3];
+
+const mainPage = createMainPage(projects);
 
 let container = document.querySelector(".container");
-container.appendChild(projectElement);
+container.appendChild(mainPage);
 

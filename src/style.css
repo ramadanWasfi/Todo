@@ -1,3 +1,25 @@
+#mainPage {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+}
+
+#mainNav {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid red;
+    padding: 16px;
+    align-items: center;
+}
+
+#tasksNavigationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid beige;
+}
+
 .todoContainer, .projectContainer {
     display: flex;
     flex-direction: column;
