@@ -1,4 +1,3 @@
-import {Task, createTaskElement} from "./Task";
 import {Common} from "./Common";
 
 function Todo(name = "", description = "", tasks = []) {
@@ -33,48 +32,4 @@ function Todo(name = "", description = "", tasks = []) {
     return Object.assign({},common,{getTasks, setTasks, getTaskByName, getTaskByPriorityNumber, getTaskByState, addNewTask});
 }
 
-
-function createTodoElement(todo) {
-    const todoContainer = document.createElement("div");
-    todoContainer.setAttribute("class","todoContainer");
-
-    const todoNameContainer = document.createElement("div");
-    todoNameContainer.setAttribute("class","todoNameContainer");
-
-    const todoDescriptionContainer = document.createElement("div");
-    todoDescriptionContainer.setAttribute("class","todoDescriptionContainer");
-
-    const todoTasksContainer = document.createElement("div");
-    todoTasksContainer.setAttribute("class","todoTasksContainer");
-
-    const tasks = todo.getTasks();
-    tasks.forEach(task => {
-        const taskElement = createTaskElement(task);
-        todoTasksContainer.appendChild(taskElement);
-    })
-       
-    
-
-    const todoDescriptionElement = document.createElement('p');
-    todoDescriptionElement.textContent = todo.getDescription();
-
-    const todoNameElement = document.createElement('p');
-    todoNameElement.textContent = todo.getName();
-
-    const todoRemoveButton = document.createElement("button");
-    todoRemoveButton.textContent = "x";
-    todoRemoveButton.setAttribute("type","button");
-    todoRemoveButton.setAttribute("class","todoRemoveButton");
-
-    todoDescriptionContainer.appendChild(todoDescriptionElement);
-    todoNameContainer.appendChild(todoNameElement);
-    todoNameContainer.appendChild(todoRemoveButton);
-
-    todoContainer.appendChild(todoNameContainer);
-    todoContainer.appendChild(todoDescriptionContainer);
-    todoContainer.appendChild(todoTasksContainer);
-
-    return todoContainer;
-}
-
-export {Todo, createTodoElement}
+export {Todo}

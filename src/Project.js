@@ -1,7 +1,5 @@
-import { Todo , createTodoElement} from "./Todo";
-import { Common
-    
- } from "./Common";
+import { Common } from "./Common";
+
 function Project(name = "test project", description = "nice project", todos = []) {
    
     let common = Common(name, description);
@@ -18,42 +16,4 @@ function Project(name = "test project", description = "nice project", todos = []
     return Object.assign({},common,{getTodos, getTodoByName, setTodos});
 }
 
-
-function createProjectElement(project) {
-    const projectContainer = document.createElement("div");
-    projectContainer.setAttribute("class","projectContainer");
-
-    const projectNameContainer = document.createElement("div");
-    projectNameContainer.setAttribute("class","projectNameContainer");
-
-    const projectDescriptionContainer = document.createElement("div");
-    projectDescriptionContainer.setAttribute("class","projectDescriptionContainer");
-
-    const projectTodosContainer = document.createElement("div");
-    projectTodosContainer.setAttribute("class","projectTodosContainer");
-
-    const todos = project.getTodos();
-    todos.forEach(todo => {
-        const todoElement = createTodoElement(todo);
-        projectTodosContainer.appendChild(todoElement);
-    })
-       
-    
-
-    const projectDescriptionElement = document.createElement('p');
-    projectDescriptionElement.textContent = project.getDescription();
-
-    const projectNameElement = document.createElement('p');
-    projectNameElement.textContent = project.getName();
-
-    projectDescriptionContainer.appendChild(projectDescriptionElement);
-    projectNameContainer.appendChild(projectNameElement);
-
-    projectContainer.appendChild(projectNameContainer);
-    projectContainer.appendChild(projectDescriptionContainer);
-    projectContainer.appendChild(projectTodosContainer);
-
-    return projectContainer;
-}
-
-export {Project, createProjectElement};
+export {Project};

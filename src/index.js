@@ -1,8 +1,7 @@
-import {Task, createTaskElement} from "./Task";
-import { Todo, createTodoElement } from "./Todo";
-import { Project, createProjectElement} from "./Project";
-import {createMainPage} from "./main";
-
+import {Task} from "./Task";
+import { Todo } from "./Todo";
+import { Project} from "./Project";
+import {createMainPage} from "./DomController";
 import "./style.css";
 
 const task = Task("task A", 'aa',2);
